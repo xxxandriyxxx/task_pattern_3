@@ -1,8 +1,8 @@
-package com.epam.bouquet.decorator;
+package com.epam.decorator.enums;
 
 public enum DeliveryMethod {
 
-    ANOTHER_CITY(60), WITHIN_CITY(20), FREE_DELIVERY(0);
+    ANOTHER_CITY(60), WITHIN_CITY(20), FREE_DELIVERY(0), WITHOUT_DELIVERY(0);
 
     private final double PRICE;
 

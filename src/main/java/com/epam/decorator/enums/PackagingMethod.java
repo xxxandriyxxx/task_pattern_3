@@ -1,8 +1,9 @@
-package com.epam.bouquet.decorator;
+package com.epam.decorator.enums;
 
 public enum PackagingMethod {
 
-    PAPER_WRAPPER(10), CLEAR_WRAPPER(10), RIBBON_WRAP(5), FREE_PACKAGING(0);
+    PAPER_WRAPPER(10), CLEAR_WRAPPER(10), RIBBON_WRAP(5),
+    FREE_PACKAGING(0), WITHOUT_PACKAGING(0);
 
     private final double PRICE;
 

@@ -1,8 +1,8 @@
-package com.epam.bouquet.decorator;
+package com.epam.decorator.enums;
 
-public enum DiscoutCard {
+public enum DiscountCard {
 
-    GOLD(40, 0,true,true),
+    GOLD(40, 100,true,true),
     BONUS(10, 0,true,false),
     SOCIAL(2, 30,false,false);
 
@@ -11,7 +11,7 @@ public enum DiscoutCard {
     private final boolean HAS_FREE_PACKAGING;
     private final boolean HAS_FREE_DELIVERY;
 
-    DiscoutCard(int percent, double price, boolean hasFreePackaging, boolean hasFreeDelivery) {
+    DiscountCard(int percent, double price, boolean hasFreePackaging, boolean hasFreeDelivery) {
         this.DISCOUNT_PERCENT = percent;
         this.DISCOUNT_PRICE = price;
         this.HAS_FREE_PACKAGING = hasFreePackaging;
