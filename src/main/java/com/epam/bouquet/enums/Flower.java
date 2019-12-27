@@ -1,4 +1,4 @@
-package com.epam.bouquet;
+package com.epam.bouquet.enums;
 
 public enum Flower {
     ROSE(25), TULIP(10), LILY(25), DAISY(15), SNOWDROP(10), POPPY(12),
