@@ -3,11 +3,11 @@ package com.epam.decorator.impl;
 import com.epam.decorator.BouquetDecorator;
 import com.epam.decorator.enums.DiscountCard;
 
-public class Discount extends BouquetDecorator {
+public class DiscountDeco extends BouquetDecorator {
 
     private DiscountCard discountCard;
 
-    public Discount(DiscountCard discountCard) {
+    public DiscountDeco(DiscountCard discountCard) {
         setToName(" + DiscountCard (" + discountCard + ")");
         this.discountCard = discountCard;
     }
