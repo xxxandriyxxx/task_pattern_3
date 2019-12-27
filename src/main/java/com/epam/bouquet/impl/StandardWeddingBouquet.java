@@ -1,7 +1,9 @@
 package com.epam.bouquet.impl;
 
 import com.epam.bouquet.Bouquet;
-import com.epam.bouquet.Flower;
+import com.epam.bouquet.enums.Flower;
+import com.epam.decorator.enums.DeliveryMethod;
+import com.epam.decorator.enums.PackagingMethod;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,13 +11,21 @@ import java.util.Map;
 public class StandardWeddingBouquet implements Bouquet {
 
     private String name;
+    private double price;
     private HashMap<Flower, Integer> flowers;
+    private PackagingMethod packagingMethod;
+    private DeliveryMethod deliveryMethod;
 
     public StandardWeddingBouquet() {
         name = "StandardWeddingBouquet";
         flowers = new HashMap<>();
         flowers.put(Flower.ROSE, 11);
         flowers.put(Flower.DAISY, 10);
+        for (Map.Entry<Flower, Integer> entry : flowers.entrySet()) {
+            price += entry.getKey().getPrice() * entry.getValue();
+        }
+        packagingMethod = PackagingMethod.WITHOUT_PACKAGING;
+        deliveryMethod = DeliveryMethod.WITHOUT_DELIVERY;
     }
 
     @Override
@@ -25,20 +35,31 @@ public class StandardWeddingBouquet implements Bouquet {
 
     @Override
     public double getCost() {
-        double cost = 0;
-        for (Map.Entry<Flower, Integer> entry : flowers.entrySet()) {
-            cost += entry.getValue();
-        }
-        return cost;
+        return price;
     }
-
-//    @Override
-//    public void addFlowers(Flower flower, int amount) {
-//        flowers.put(flower, amount);
-//    }
 
     @Override
     public HashMap<Flower, Integer> getFlowers() {
         return flowers;
+    }
+
+    @Override
+    public PackagingMethod getPackagingMethod() {
+        return packagingMethod;
+    }
+
+    @Override
+    public void setPackagingMethod(PackagingMethod packagingMethod) {
+        this.packagingMethod = packagingMethod;
+    }
+
+    @Override
+    public DeliveryMethod getDeliveryMethod() {
+        return deliveryMethod;
+    }
+
+    @Override
+    public void setDeliveryMethod(DeliveryMethod deliveryMethod) {
+        this.deliveryMethod = deliveryMethod;
     }
 }
