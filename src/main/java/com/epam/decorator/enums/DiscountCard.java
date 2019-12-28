@@ -4,7 +4,8 @@ public enum DiscountCard {
 
     GOLD(15, 0, true, true),
     BONUS(0, 50, true, false),
-    SOCIAL(2, 0, false, false);
+    SOCIAL(2, 0, false, false),
+    NO_CARD(0, 0, false, false);
 
     private final int DISCOUNT_PERCENT;
     private final double DISCOUNT_PRICE;
