@@ -15,14 +15,16 @@ public class DiscountDeco extends BouquetDecorator {
     @Override
     public double getCost() {
         double cost = bouquet.orElseThrow(IllegalArgumentException::new).getCost();
-        cost *= (double) (100 - discountCard.getDiscountPercent()) / 100;
-        cost -= discountCard.getDiscountPrice();
         if (discountCard.hasFreePackaging()) {
             cost -= bouquet.orElseThrow(IllegalArgumentException::new).getPackagingMethod().getPrice();
         }
         if (discountCard.hasFreeDelivery()) {
             cost -= bouquet.orElseThrow(IllegalArgumentException::new).getDeliveryMethod().getPrice();
         }
+        if (cost > discountCard.getDiscountPrice()) {
+            cost -= discountCard.getDiscountPrice();
+        }
+        cost *= (double) (100 - discountCard.getDiscountPercent()) / 100;
         return cost;
     }
 }
