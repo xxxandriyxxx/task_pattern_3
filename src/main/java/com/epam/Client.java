@@ -1,7 +1,8 @@
 package com.epam;
 
-import com.epam.bouquet.Bouquet;
-import com.epam.bouquet.enums.Flower;
+import com.epam.bouquet_catalogue.Bouquet;
+import com.epam.bouquet_catalogue.enums.Flower;
+import com.epam.bouquet_catalogue.impl.EmptyBouquet;
 import com.epam.decorator.BouquetDecorator;
 import com.epam.decorator.impl.DeliveryDeco;
 import com.epam.decorator.impl.FlowerDeco;
@@ -10,14 +11,13 @@ import com.epam.decorator.enums.DiscountCard;
 import com.epam.decorator.enums.PackagingMethod;
 import com.epam.decorator.impl.DiscountDeco;
 import com.epam.decorator.impl.PackagingDeco;
-import com.epam.bouquet.impl.StandardWeddingBouquet;
 
 import java.util.HashMap;
 
 public class Client {
 
     public static void main(String[] args) {
-        Bouquet standardBouquet = new StandardWeddingBouquet();
+        Bouquet standardBouquet = new EmptyBouquet();
         BouquetDecorator flowerDecorator = new FlowerDeco(Flower.SUNFLOWER, 3);
         BouquetDecorator flowerDecorator2 = new FlowerDeco(Flower.IRIS, 5);
         BouquetDecorator packaging = new PackagingDeco(PackagingMethod.PAPER_WRAPPER);
@@ -39,6 +39,8 @@ public class Client {
         System.out.println("name = " + name);
         System.out.println("cost = " + cost);
         System.out.println("flowers = " + flowers);
+
+        System.out.println(standardBouquet);
     }
 
 }

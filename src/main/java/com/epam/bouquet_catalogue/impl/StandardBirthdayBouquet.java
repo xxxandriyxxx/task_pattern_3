@@ -1,6 +1,6 @@
-package com.epam.bouquet.impl;
+package com.epam.bouquet_catalogue.impl;
 
-import com.epam.bouquet.enums.Flower;
+import com.epam.bouquet_catalogue.enums.Flower;
 
 public class StandardBirthdayBouquet extends EmptyBouquet {
 

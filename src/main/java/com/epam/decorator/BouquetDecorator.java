@@ -1,7 +1,7 @@
 package com.epam.decorator;
 
-import com.epam.bouquet.Bouquet;
-import com.epam.bouquet.enums.Flower;
+import com.epam.bouquet_catalogue.Bouquet;
+import com.epam.bouquet_catalogue.enums.Flower;
 import com.epam.decorator.enums.DeliveryMethod;
 import com.epam.decorator.enums.PackagingMethod;
 
