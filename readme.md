@@ -13,3 +13,4 @@
 ##### Notice: 
 1. Used the next patterns:
 - Decorator
+- Factory Method
