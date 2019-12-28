@@ -8,16 +8,16 @@ import com.epam.decorator.enums.PackagingMethod;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class StandardBouquet implements Bouquet {
+public class EmptyBouquet implements Bouquet {
 
-    private String name;
+    protected String name;
     private double price;
     protected HashMap<Flower, Integer> flowers;
     private PackagingMethod packagingMethod;
     private DeliveryMethod deliveryMethod;
 
-    protected StandardBouquet(String name) {
-        this.name = name;
+    public EmptyBouquet() {
+        this.name = "EmptyBouquet";
         flowers = new HashMap<>();
         packagingMethod = PackagingMethod.WITHOUT_PACKAGING;
         deliveryMethod = DeliveryMethod.WITHOUT_DELIVERY;
