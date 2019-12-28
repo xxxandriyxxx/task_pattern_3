@@ -2,10 +2,10 @@ package com.epam.bouquet.impl;
 
 import com.epam.bouquet.enums.Flower;
 
-public class StandardWeddingBouquet extends StandardBouquet {
+public class StandardWeddingBouquet extends EmptyBouquet {
 
     public StandardWeddingBouquet() {
-        super("StandardWeddingBouquet");
+        name = "StandardWeddingBouquet";
         flowers.put(Flower.ROSE, 11);
         flowers.put(Flower.DAISY, 10);
         setPrice();
