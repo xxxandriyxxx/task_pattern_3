@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StandardValentinesBouquet implements Bouquet {
-    
+
     private String name;
     private double price;
     private HashMap<Flower, Integer> flowers;
@@ -19,8 +19,8 @@ public class StandardValentinesBouquet implements Bouquet {
     public StandardValentinesBouquet() {
         name = "StandardValentinesBouquet";
         flowers = new HashMap<>();
-        flowers.put(Flower.SNOWDROP, 5);
-        flowers.put(Flower.BLUEBELL, 4);
+        flowers.put(Flower.SNOWDROP, 15);
+        flowers.put(Flower.BLUEBELL, 10);
         for (Map.Entry<Flower, Integer> entry : flowers.entrySet()) {
             price += entry.getKey().getPrice() * entry.getValue();
         }
