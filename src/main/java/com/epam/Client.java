@@ -39,8 +39,6 @@ public class Client {
         System.out.println("name = " + name);
         System.out.println("cost = " + cost);
         System.out.println("flowers = " + flowers);
-
-        System.out.println(standardBouquet);
     }
 
 }
