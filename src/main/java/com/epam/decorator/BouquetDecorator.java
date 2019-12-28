@@ -6,6 +6,7 @@ import com.epam.decorator.enums.DeliveryMethod;
 import com.epam.decorator.enums.PackagingMethod;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 public class BouquetDecorator implements Bouquet {
@@ -21,8 +22,17 @@ public class BouquetDecorator implements Bouquet {
     public void setBouquet(Bouquet outBouquet) {
         bouquet = Optional.ofNullable(outBouquet);
         if (additionalFlower != null) {
-            bouquet.orElseThrow(IllegalArgumentException::new).getFlowers()
-                    .put(additionalFlower, additionalFlowerNumber);
+            boolean flowerExists = false;
+            HashMap<Flower, Integer> flowers = bouquet.orElseThrow(IllegalArgumentException::new).getFlowers();
+            for (Map.Entry<Flower, Integer> entry : flowers.entrySet()) {
+                if (entry.getKey().equals(additionalFlower)) {
+                    entry.setValue(entry.getValue() + additionalFlowerNumber);
+                    flowerExists = true;
+                }
+            }
+            if (!flowerExists) {
+                flowers.put(additionalFlower, additionalFlowerNumber);
+            }
         }
         if (newPackagingMethod != null) {
             bouquet.orElseThrow(IllegalArgumentException::new).setPackagingMethod(newPackagingMethod);
