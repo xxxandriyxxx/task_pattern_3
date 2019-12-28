@@ -1,7 +1,7 @@
-package com.epam.decorator.impl;
+package com.epam.model.decorator.impl;
 
-import com.epam.decorator.BouquetDecorator;
-import com.epam.decorator.enums.PackagingMethod;
+import com.epam.model.decorator.BouquetDecorator;
+import com.epam.model.enums.PackagingMethod;
 
 public class PackagingDeco extends BouquetDecorator {
 

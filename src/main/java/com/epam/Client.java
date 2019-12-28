@@ -1,19 +1,19 @@
 package com.epam;
 
-import com.epam.bouquet_catalogue.Bouquet;
-import com.epam.bouquet_catalogue.enums.BaseBouquetType;
-import com.epam.bouquet_catalogue.enums.Flower;
-import com.epam.bouquet_catalogue.impl.EmptyBouquet;
-import com.epam.decorator.BouquetDecorator;
-import com.epam.decorator.impl.DeliveryDeco;
-import com.epam.decorator.impl.FlowerDeco;
-import com.epam.decorator.enums.DeliveryMethod;
-import com.epam.decorator.enums.DiscountCard;
-import com.epam.decorator.enums.PackagingMethod;
-import com.epam.decorator.impl.DiscountDeco;
-import com.epam.decorator.impl.PackagingDeco;
-import com.epam.factory.Store;
-import com.epam.factory.impl.FlowerStore;
+import com.epam.model.bouquet_catalogue.Bouquet;
+import com.epam.model.enums.BaseBouquetType;
+import com.epam.model.enums.Flower;
+import com.epam.model.bouquet_catalogue.impl.EmptyBouquet;
+import com.epam.model.decorator.BouquetDecorator;
+import com.epam.model.decorator.impl.DeliveryDeco;
+import com.epam.model.decorator.impl.FlowerDeco;
+import com.epam.model.enums.DeliveryMethod;
+import com.epam.model.enums.DiscountCard;
+import com.epam.model.enums.PackagingMethod;
+import com.epam.model.decorator.impl.DiscountDeco;
+import com.epam.model.decorator.impl.PackagingDeco;
+import com.epam.model.factory.Store;
+import com.epam.model.factory.impl.FlowerStore;
 
 import java.util.HashMap;
 

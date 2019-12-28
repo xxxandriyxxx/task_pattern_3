@@ -1,8 +1,8 @@
-package com.epam.bouquet_catalogue;
+package com.epam.model.bouquet_catalogue;
 
-import com.epam.bouquet_catalogue.enums.Flower;
-import com.epam.decorator.enums.DeliveryMethod;
-import com.epam.decorator.enums.PackagingMethod;
+import com.epam.model.enums.Flower;
+import com.epam.model.enums.DeliveryMethod;
+import com.epam.model.enums.PackagingMethod;
 
 import java.util.HashMap;
 

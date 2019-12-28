@@ -1,4 +1,4 @@
-package com.epam.bouquet_catalogue.enums;
+package com.epam.model.enums;
 
 public enum Flower {
     ROSE(25), TULIP(10), LILY(25), DAISY(15), SNOWDROP(10), POPPY(12),

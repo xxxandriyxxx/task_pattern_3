@@ -1,4 +1,4 @@
-package com.epam.bouquet_catalogue.enums;
+package com.epam.model.enums;
 
 public enum BaseBouquetType {
     EMPTY, BIRTHDAY, VALENTINES, WEDDING

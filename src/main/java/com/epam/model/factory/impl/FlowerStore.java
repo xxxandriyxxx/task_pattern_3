@@ -1,12 +1,12 @@
-package com.epam.factory.impl;
+package com.epam.model.factory.impl;
 
-import com.epam.bouquet_catalogue.Bouquet;
-import com.epam.bouquet_catalogue.enums.BaseBouquetType;
-import com.epam.bouquet_catalogue.impl.EmptyBouquet;
-import com.epam.bouquet_catalogue.impl.StandardBirthdayBouquet;
-import com.epam.bouquet_catalogue.impl.StandardValentinesBouquet;
-import com.epam.bouquet_catalogue.impl.StandardWeddingBouquet;
-import com.epam.factory.Store;
+import com.epam.model.bouquet_catalogue.Bouquet;
+import com.epam.model.enums.BaseBouquetType;
+import com.epam.model.bouquet_catalogue.impl.EmptyBouquet;
+import com.epam.model.bouquet_catalogue.impl.StandardBirthdayBouquet;
+import com.epam.model.bouquet_catalogue.impl.StandardValentinesBouquet;
+import com.epam.model.bouquet_catalogue.impl.StandardWeddingBouquet;
+import com.epam.model.factory.Store;
 
 public class FlowerStore extends Store {
 

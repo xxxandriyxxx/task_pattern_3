@@ -1,7 +1,7 @@
-package com.epam.decorator.impl;
+package com.epam.model.decorator.impl;
 
-import com.epam.bouquet_catalogue.enums.Flower;
-import com.epam.decorator.BouquetDecorator;
+import com.epam.model.enums.Flower;
+import com.epam.model.decorator.BouquetDecorator;
 
 public class FlowerDeco extends BouquetDecorator {
 

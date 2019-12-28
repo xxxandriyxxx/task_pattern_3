@@ -1,4 +1,4 @@
-package com.epam.decorator.enums;
+package com.epam.model.enums;
 
 public enum DeliveryMethod {
 
