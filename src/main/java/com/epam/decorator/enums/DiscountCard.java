@@ -2,9 +2,9 @@ package com.epam.decorator.enums;
 
 public enum DiscountCard {
 
-    GOLD(40, 100,true,true),
-    BONUS(10, 0,true,false),
-    SOCIAL(2, 30,false,false);
+    GOLD(15, 0, true, true),
+    BONUS(0, 50, true, false),
+    SOCIAL(2, 0, false, false);
 
     private final int DISCOUNT_PERCENT;
     private final double DISCOUNT_PRICE;
