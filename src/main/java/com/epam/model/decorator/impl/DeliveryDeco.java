@@ -6,7 +6,7 @@ import com.epam.model.enums.DeliveryMethod;
 public class DeliveryDeco extends BouquetDecorator {
 
     public DeliveryDeco(DeliveryMethod deliveryMethod) {
-        setToName(" + DeliveryDeco (" + deliveryMethod.name() + ")");
+        setToName(" + DeliveryDecorator (" + deliveryMethod.name() + ")");
         setAdditionalPrice(deliveryMethod.getPrice());
         setNewDeliveryMethod(deliveryMethod);
     }

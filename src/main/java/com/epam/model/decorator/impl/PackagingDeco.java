@@ -6,7 +6,7 @@ import com.epam.model.enums.PackagingMethod;
 public class PackagingDeco extends BouquetDecorator {
 
     public PackagingDeco(PackagingMethod packagingMethod) {
-        setToName(" + PackagingDeco (" + packagingMethod.name() + ")");
+        setToName(" + PackagingDecorator (" + packagingMethod.name() + ")");
         setAdditionalPrice(packagingMethod.getPrice());
         setNewPackagingMethod(packagingMethod);
     }
