@@ -2,6 +2,7 @@ package com.epam.controller;
 
 import com.epam.model.bouquet_catalogue.Bouquet;
 import com.epam.model.enums.*;
+import com.epam.view.Observer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -32,4 +33,6 @@ public interface Controller {
     DiscountCard getDefaultDiscountCard();
 
     List<DiscountCard> getDiscountCards();
+
+    void registerObserver(Observer observer);
 }

@@ -4,6 +4,7 @@ import com.epam.model.BusinessLogic;
 import com.epam.model.Model;
 import com.epam.model.bouquet_catalogue.Bouquet;
 import com.epam.model.enums.*;
+import com.epam.view.Observer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -77,5 +78,10 @@ public class ControllerImpl implements Controller {
     @Override
     public List<DiscountCard> getDiscountCards() {
         return model.getDiscountCards();
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        model.registerObserver(observer);
     }
 }
