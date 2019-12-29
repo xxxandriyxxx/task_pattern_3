@@ -12,5 +12,7 @@
 
 ##### Notice: 
 1. Used the next patterns:
-- Decorator
-- Factory Method
+- Decorator;
+- Factory Method;
+- Observer;
+- MVC.
