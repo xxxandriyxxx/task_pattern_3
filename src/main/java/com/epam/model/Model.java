@@ -6,7 +6,7 @@ import com.epam.model.enums.*;
 import java.util.HashMap;
 import java.util.List;
 
-public interface Model {
+public interface Model extends Observable {
 
     List<String> getStores();
 
