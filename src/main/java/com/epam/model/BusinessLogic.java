@@ -13,10 +13,10 @@ public class BusinessLogic implements Model {
 
     private Store store;
     private List<String> storesNames;
-    private List<Observer> observers;
+    private HashMap<Observer, Integer> observers;
 
     public BusinessLogic() {
-        observers = new LinkedList<>();
+        observers = new HashMap<>();
     }
 
     @Override
@@ -30,15 +30,17 @@ public class BusinessLogic implements Model {
     @Override
     public Bouquet orderBouquet(int storeNumber, BaseBouquetType baseBouquetType, HashMap<Flower,
             Integer> additionalFlowers, PackagingMethod packagingMethod, DeliveryMethod deliveryMethod,
-                                DiscountCard discountCard) {
+                                DiscountCard discountCard, int customerId) {
         Bouquet orderedBouquet;
         try {
             setStore(storeNumber);
-            orderedBouquet = store.order(baseBouquetType, additionalFlowers, packagingMethod, deliveryMethod, discountCard);
+            orderedBouquet = store.order(baseBouquetType, additionalFlowers, packagingMethod,
+                    deliveryMethod, discountCard);
         } catch (Exception e) {
             return null;
         }
-        notifyObservers("Message from " + storesNames.get(storeNumber - 1) + ": your order has been accepted!!!");
+        notifyObservers("Message from " + storesNames.get(storeNumber - 1) +
+                ": your order has been accepted!!!", customerId);
         return orderedBouquet;
     }
 
@@ -106,14 +108,16 @@ public class BusinessLogic implements Model {
     }
 
     @Override
-    public void registerObserver(Observer observer) {
-        observers.add(observer);
+    public void registerObserver(Observer observer, int customerId) {
+        observers.put(observer, customerId);
     }
 
     @Override
-    public void notifyObservers(String message) {
-        for (Observer observer : observers) {
-            observer.notification(message);
+    public void notifyObservers(String message, int customerId) {
+        for (Map.Entry<Observer, Integer> entry : observers.entrySet()) {
+            if (entry.getValue() == customerId) {
+                entry.getKey().notification(message);
+            }
         }
     }
 }

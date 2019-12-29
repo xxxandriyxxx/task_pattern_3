@@ -25,14 +25,14 @@ public class ControllerImpl implements Controller {
     @Override
     public Bouquet orderBouquet(int storeNumber, BaseBouquetType baseBouquetType, HashMap<Flower,
             Integer> additionalFlowers, PackagingMethod packagingMethod, DeliveryMethod deliveryMethod,
-                                DiscountCard discountCard) {
+                                DiscountCard discountCard, int customerId) {
         return model.orderBouquet(storeNumber, baseBouquetType, additionalFlowers, packagingMethod,
-                deliveryMethod, discountCard);
+                deliveryMethod, discountCard, customerId);
     }
 
     @Override
     public Bouquet getBouquet(int storeNumber, BaseBouquetType baseBouquetType) {
-        return model.getBouquet(storeNumber,baseBouquetType);
+        return model.getBouquet(storeNumber, baseBouquetType);
     }
 
     @Override
@@ -81,7 +81,7 @@ public class ControllerImpl implements Controller {
     }
 
     @Override
-    public void registerObserver(Observer observer) {
-        model.registerObserver(observer);
+    public void registerObserver(Observer observer, int customerId) {
+        model.registerObserver(observer, customerId);
     }
 }

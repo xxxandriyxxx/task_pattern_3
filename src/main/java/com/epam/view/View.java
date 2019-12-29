@@ -23,11 +23,12 @@ public class View implements Observer {
     private DeliveryMethod deliveryMethod;
     private DiscountCard discountCard;
     private HashMap<Flower, Integer> additionalFlowers;
-    private Bouquet orderedBouquet;
+    private int customerId;
 
     public View() {
         controller = new ControllerImpl();
-        controller.registerObserver(this);
+        customerId = 12345;
+        controller.registerObserver(this, customerId);
         input = new Scanner(System.in);
         logger = LogManager.getLogger(View.class);
         stores = controller.getStores();
@@ -162,8 +163,8 @@ public class View implements Observer {
         } else if (getBaseBouquet().getFlowers().isEmpty() && additionalFlowers.isEmpty()) {
             logger.error("FAILURE: the base bouquet is empty and no additional flowers!!!");
         } else {
-            orderedBouquet = controller.orderBouquet(selectedStoreNum, baseBouquetType, additionalFlowers, packagingMethod,
-                    deliveryMethod, discountCard);
+            Bouquet orderedBouquet = controller.orderBouquet(selectedStoreNum, baseBouquetType, additionalFlowers, packagingMethod,
+                    deliveryMethod, discountCard, customerId);
             logger.debug("-------------------------");
             logger.debug("Details of the bouquet:");
             logger.debug("Name: " + orderedBouquet.getName());

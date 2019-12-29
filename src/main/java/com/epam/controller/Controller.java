@@ -12,7 +12,8 @@ public interface Controller {
     List<String> getStores();
 
     Bouquet orderBouquet(int storeNumber, BaseBouquetType baseBouquetType, HashMap<Flower, Integer> additionalFlowers,
-                         PackagingMethod packagingMethod, DeliveryMethod deliveryMethod, DiscountCard discountCard);
+                         PackagingMethod packagingMethod, DeliveryMethod deliveryMethod, DiscountCard discountCard,
+                         int customerId);
 
     Bouquet getBouquet(int storeNumber, BaseBouquetType baseBouquetType);
 
@@ -34,5 +35,5 @@ public interface Controller {
 
     List<DiscountCard> getDiscountCards();
 
-    void registerObserver(Observer observer);
+    void registerObserver(Observer observer, int customerId);
 }

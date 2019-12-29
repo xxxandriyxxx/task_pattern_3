@@ -11,7 +11,8 @@ public interface Model extends Observable {
     List<String> getStores();
 
     Bouquet orderBouquet(int storeNumber, BaseBouquetType baseBouquetType, HashMap<Flower, Integer> additionalFlowers,
-                         PackagingMethod packagingMethod, DeliveryMethod deliveryMethod, DiscountCard discountCard);
+                         PackagingMethod packagingMethod, DeliveryMethod deliveryMethod, DiscountCard discountCard,
+                         int customerId);
 
     Bouquet getBouquet(int storeNumber, BaseBouquetType baseBouquetType);
 
