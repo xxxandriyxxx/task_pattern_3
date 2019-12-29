@@ -5,15 +5,18 @@ import com.epam.model.enums.*;
 import com.epam.model.factory.Store;
 import com.epam.model.factory.impl.FlowerStore1;
 import com.epam.model.factory.impl.FlowerStore2;
+import com.epam.view.Observer;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class BusinessLogic implements Model {
 
     private Store store;
+    private List<Observer> observers;
+
+    public BusinessLogic() {
+        observers = new LinkedList<>();
+    }
 
     @Override
     public List<String> getStores() {
@@ -96,5 +99,17 @@ public class BusinessLogic implements Model {
     @Override
     public List<DiscountCard> getDiscountCards() {
         return new ArrayList<>(Arrays.asList(DiscountCard.values()));
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.notification(message);
+        }
     }
 }
