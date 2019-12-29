@@ -12,6 +12,7 @@ import java.util.*;
 public class BusinessLogic implements Model {
 
     private Store store;
+    private List<String> storesNames;
     private List<Observer> observers;
 
     public BusinessLogic() {
@@ -20,7 +21,7 @@ public class BusinessLogic implements Model {
 
     @Override
     public List<String> getStores() {
-        List<String> storesNames = new ArrayList<>();
+        storesNames = new ArrayList<>();
         storesNames.add("Store 1");
         storesNames.add("Store 2");
         return storesNames;
@@ -30,12 +31,15 @@ public class BusinessLogic implements Model {
     public Bouquet orderBouquet(int storeNumber, BaseBouquetType baseBouquetType, HashMap<Flower,
             Integer> additionalFlowers, PackagingMethod packagingMethod, DeliveryMethod deliveryMethod,
                                 DiscountCard discountCard) {
+        Bouquet orderedBouquet;
         try {
             setStore(storeNumber);
-            return store.order(baseBouquetType, additionalFlowers, packagingMethod, deliveryMethod, discountCard);
+            orderedBouquet = store.order(baseBouquetType, additionalFlowers, packagingMethod, deliveryMethod, discountCard);
         } catch (Exception e) {
             return null;
         }
+        notifyObservers("Message from " + storesNames.get(storeNumber - 1) + ": your order has been accepted!!!");
+        return orderedBouquet;
     }
 
     @Override

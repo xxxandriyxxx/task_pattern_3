@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
-public class View implements Observer{
+public class View implements Observer {
     private Controller controller;
     private Map<String, String> menu;
     private Map<String, Printable> methodsMenu;
@@ -162,13 +162,16 @@ public class View implements Observer{
         } else if (getBaseBouquet().getFlowers().isEmpty() && additionalFlowers.isEmpty()) {
             logger.error("FAILURE: the base bouquet is empty and no additional flowers!!!");
         } else {
-            logger.debug("The bouquet ordered successfully!!!");
-            logger.debug("-------------------------");
             orderedBouquet = controller.orderBouquet(selectedStoreNum, baseBouquetType, additionalFlowers, packagingMethod,
                     deliveryMethod, discountCard);
+            logger.debug("-------------------------");
+            logger.debug("Details of the bouquet:");
             logger.debug("Name: " + orderedBouquet.getName());
             logger.debug("Flowers: " + orderedBouquet.getFlowers());
             logger.debug("Cost: " + orderedBouquet.getCost());
+            logger.debug("Packaging method: " + orderedBouquet.getPackagingMethod());
+            logger.debug("Delivery method: " + orderedBouquet.getDeliveryMethod());
+            logger.debug("Discount card used: " + discountCard);
         }
     }
 
@@ -215,6 +218,6 @@ public class View implements Observer{
 
     @Override
     public void notification(String message) {
-        logger.error(message);
+        logger.warn(message);
     }
 }
