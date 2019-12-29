@@ -1,0 +1,25 @@
+Configuration:
+  packages: "com.epam.pattern3"
+  name: Log4j2_Config
+  properties:
+    property:
+      name: log-path
+      value: logs
+
+  #------------------------------------------------------------------------------------------------
+  appenders:
+
+    Console:
+      - name: Console_appender
+        PatternLayout:
+          Pattern: "%highlight{%msg} %xEx{short}%n"
+  #------------------------------------------------------------------------------------------------
+  Loggers:
+
+    Logger:
+      - name: com.epam.view.View
+        additivity: false
+        level: all
+        AppenderRef:
+          - ref: Console_appender
+            level: all
