@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
-public class View {
+public class View implements Observer{
     private Controller controller;
     private Map<String, String> menu;
     private Map<String, Printable> methodsMenu;
@@ -27,6 +27,7 @@ public class View {
 
     public View() {
         controller = new ControllerImpl();
+        controller.registerObserver(this);
         input = new Scanner(System.in);
         logger = LogManager.getLogger(View.class);
         stores = controller.getStores();
@@ -210,5 +211,10 @@ public class View {
 
     private void showInputError() {
         logger.error("You entered the wrong symbol!!!");
+    }
+
+    @Override
+    public void notification(String message) {
+        logger.error(message);
     }
 }
