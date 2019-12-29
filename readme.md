@@ -11,8 +11,11 @@
 
 
 ##### Notice: 
+
 1. Used the next patterns:
 - Decorator;
 - Factory Method;
 - Observer;
 - MVC.
+2. Run Application.main() to start.
+
