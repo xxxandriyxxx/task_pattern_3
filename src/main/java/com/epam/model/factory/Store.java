@@ -21,6 +21,10 @@ public abstract class Store {
 
     protected abstract Bouquet createBouquet(BaseBouquetType baseBouquetType);
 
+    public Bouquet getBouquet(BaseBouquetType baseBouquetType){
+        return createBouquet(baseBouquetType);
+    }
+
     public Bouquet order(BaseBouquetType baseBouquetType, HashMap<Flower, Integer> additionalFlowers,
                          PackagingMethod packagingMethod, DeliveryMethod deliveryMethod, DiscountCard discountCard) {
         Bouquet bouquet = createBouquet(baseBouquetType);
